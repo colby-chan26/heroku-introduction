@@ -17,7 +17,7 @@ def getLastName():
     else:
         return jsonify({"result": "ERROR: try again"})
 
-@app.route('/')
+@app.route('')
 def index():
     return app.send_static_file('index.html')
 

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 import os 
 # from flask_cors import CORS
 
@@ -12,7 +12,7 @@ app = Flask(__name__, static_folder="frontend/hw6/build", static_url_path="")
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/name', methods=['GET'])
 def getLastName():

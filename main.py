@@ -7,7 +7,7 @@ names = {
     "mark": 'liao'
 }
 
-app = Flask(__name__, static_folder="frontend/hw6/build", static_url_path="")
+app = Flask(__name__, static_folder="frontend/hw6/build", static_url_path="/")
 # CORS(app)
 @app.route('/', methods=['GET'])
 def getLastName():
@@ -17,7 +17,7 @@ def getLastName():
     else:
         return jsonify({"result": "ERROR: try again"})
 
-@app.route('')
+@app.route('/')
 def index():
     return app.send_static_file('index.html')
 

@@ -8,7 +8,7 @@ const App = () => {
   const getData = async (e) => {
     e.preventDefault();
     console.log('hello')
-    const res = await fetch(`/name?lastName=${e.target.value}`)
+    const res = await fetch(`/name?lastName=${e.target.value.toLowerCase()}`)
     const data = await res.json()
     setOutput(data.result)
     return data;
